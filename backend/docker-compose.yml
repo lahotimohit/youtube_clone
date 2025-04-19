@@ -13,14 +13,14 @@ services:
       - ./:/app
   
   db:
-    image: postgres:15
+    image: postgres:latest
     ports:
       - "5432:5432"
     container_name: postgres_db
     environment:
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: youtube
       POSTGRES_UESR: postgres
-      POSTGRES_PASSWORD: test123
+      POSTGRES_PASSWORD: mohitlahoti
     volumes:
       - postgres_db:/var/lib/postgresql/data
 

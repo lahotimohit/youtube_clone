@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from database import init_db
-from routers import auth
+from routers import auth, upload, video
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -23,6 +23,8 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(upload.router, prefix="/upload/video")
+app.include_router(video.router, prefix="/videos")
 
 @app.get("/")
 def root():

@@ -8,3 +8,10 @@ class UserRegister(BaseModel):
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+
+class UploadMetaData(BaseModel):
+    title: str
+    desciption: str
+    video_id: str
+    video_s3_key: str
+    visibility: str

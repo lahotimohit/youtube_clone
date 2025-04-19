@@ -10,6 +10,9 @@ class Settings(BaseSettings):
     algorithm: str
     access_token_expire_minutes: int
     refresh_token_expire_days: int
+    aws_region_name: str
+    aws_raw_videos_bucket: str
+    aws_thumbnail_bucket: str
 
     class Config:
         env_file=".env"
